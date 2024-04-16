@@ -18,6 +18,7 @@ const Elements = () => {
       <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
       <ambientLight intensity={Math.PI / 2} />
       {/* Main title */}
+      {/* Section A */}
       <mesh
         position={[width * -0.25, height * -1.0, 0]}
         rotation={[Math.PI / 4, Math.PI / 3, 0]}
@@ -25,22 +26,35 @@ const Elements = () => {
         <boxGeometry></boxGeometry>
         <meshStandardMaterial color="orange"></meshStandardMaterial>
       </mesh>
-      {/* Section A */}
+      {/* Section B */}
       <mesh position={[width * 0.25, height * -2.0, 0]} rotation={[0, 0, 0]}>
         <torusGeometry></torusGeometry>
         <meshStandardMaterial color="salmon"></meshStandardMaterial>
       </mesh>
-      {/* Section B */}
+      {/* Section C */}
       <mesh
         position={[width * -0.25, height * -3.0, 0]}
+        rotation={[-Math.PI / 3, Math.PI / 4, -Math.PI / 2]}
+      >
+        <dodecahedronGeometry></dodecahedronGeometry>
+        <meshStandardMaterial color="skyblue"></meshStandardMaterial>
+      </mesh>
+      {/* Section D */}
+      <mesh
+        position={[width * 0.25, height * -4.0, 0]}
         rotation={[-Math.PI / 3, Math.PI / 4, -Math.PI / 2]}
       >
         <coneGeometry></coneGeometry>
         <meshStandardMaterial color="aquamarine"></meshStandardMaterial>
       </mesh>
-      {/* Section C */}
-      {/* Section D */}
       {/* Section E */}
+      <mesh
+        position={[width * -0.25, height * -5.0, 0]}
+        rotation={[-Math.PI / 2, Math.PI / 3, -Math.PI / 3]}
+      >
+        <tetrahedronGeometry></tetrahedronGeometry>
+        <meshStandardMaterial color="mediumpurple"></meshStandardMaterial>
+      </mesh>
       {/* End title */}
     </Scroll>
   );
