@@ -149,7 +149,7 @@ const Overlay = () => {
               colSpan={4}
               rowSpan={3}
               padding="50px"
-              bg="aquamarine"
+              bg="skyblue"
             >
               <Stack spacing={5}>
                 <Heading as="h1" fontSize="4xl">
@@ -191,10 +191,10 @@ const Overlay = () => {
               colSpan={4}
               rowSpan={3}
               padding="50px"
-              bg="teal"
+              bg="aquamarine"
             >
               <Stack spacing={5}>
-                <Heading as="h1" fontSize="4xl">
+                <Heading as="h1" fontSize="4xl" noOfLines={1}>
                   ¿Cuáles son sus oportunidades?
                 </Heading>
                 <Box>
@@ -233,7 +233,7 @@ const Overlay = () => {
               colSpan={4}
               rowSpan={3}
               padding="50px"
-              bg="orange"
+              bg="mediumpurple"
             >
               <Stack spacing={5}>
                 <Heading as="h1" fontSize="4xl">
