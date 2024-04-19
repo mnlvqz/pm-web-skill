@@ -24,7 +24,6 @@ const Overlay = () => {
         <Container
           maxW="100%"
           h="100vh"
-          //bg="orange"
           style={{
             position: "absolute",
             top: `0vh`,
@@ -33,7 +32,16 @@ const Overlay = () => {
         >
           <Heading
             as="h1"
-            fontSize="8xl"
+            w="100%"
+            textAlign="center"
+            fontSize={{
+              base: "35px",
+              sm: "55px",
+              md: "75px",
+              lg: "85px",
+              xl: "100px",
+              "2xl": "120px",
+            }}
             style={{
               position: "absolute",
               top: "50%",
