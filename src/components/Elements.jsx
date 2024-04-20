@@ -21,6 +21,7 @@ const Elements = () => {
       {/* Section A */}
       <mesh
         position={[width * -0.25, height * -1.0, 0]}
+        scale={[0.5, 0.5, 0.5]}
         rotation={[Math.PI / 4, Math.PI / 3, 0]}
       >
         <boxGeometry></boxGeometry>
