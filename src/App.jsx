@@ -1,8 +1,8 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { ScrollControls } from "@react-three/drei";
-import Elements from "./assets/components/Elements";
-import Overlay from "./assets/components/Overlay";
+import Elements from "./components/Elements";
+import Overlay from "./components/Overlay";
 
 const App = () => {
   return (
