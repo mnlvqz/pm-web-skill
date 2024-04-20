@@ -1,8 +1,8 @@
 import React from "react";
 import { Scroll } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
+import BasicItem from "./BasicItem.jsx";
 
-useThree;
 const Elements = () => {
   const { width, height } = useThree((state) => state.viewport);
 
@@ -19,43 +19,35 @@ const Elements = () => {
       <ambientLight intensity={Math.PI / 2} />
       {/* Main title */}
       {/* Section A */}
-      <mesh
+      <BasicItem
         position={[width * -0.25, height * -1.0, 0]}
-        scale={[0.5, 0.5, 0.5]}
-        rotation={[Math.PI / 4, Math.PI / 3, 0]}
-      >
-        <boxGeometry></boxGeometry>
-        <meshStandardMaterial color="orange"></meshStandardMaterial>
-      </mesh>
+        rotation={[Math.PI / 3, Math.PI / 3, Math.PI / 3]}
+        color="orange"
+      />
       {/* Section B */}
-      <mesh position={[width * 0.25, height * -2.0, 0]} rotation={[0, 0, 0]}>
-        <torusGeometry></torusGeometry>
-        <meshStandardMaterial color="salmon"></meshStandardMaterial>
-      </mesh>
+      <BasicItem
+        position={[width * 0.25, height * -2.0, 0]}
+        rotation={[Math.PI / 3, Math.PI / 3, Math.PI / 3]}
+        color="salmon"
+      />
       {/* Section C */}
-      <mesh
+      <BasicItem
         position={[width * -0.25, height * -3.0, 0]}
-        rotation={[-Math.PI / 3, Math.PI / 4, -Math.PI / 2]}
-      >
-        <dodecahedronGeometry></dodecahedronGeometry>
-        <meshStandardMaterial color="skyblue"></meshStandardMaterial>
-      </mesh>
+        rotation={[Math.PI / 3, Math.PI / 3, Math.PI / 3]}
+        color="skyblue"
+      />
       {/* Section D */}
-      <mesh
+      <BasicItem
         position={[width * 0.25, height * -4.0, 0]}
-        rotation={[-Math.PI / 3, Math.PI / 4, -Math.PI / 2]}
-      >
-        <coneGeometry></coneGeometry>
-        <meshStandardMaterial color="aquamarine"></meshStandardMaterial>
-      </mesh>
+        rotation={[Math.PI / 3, Math.PI / 3, Math.PI / 3]}
+        color="aquamarine"
+      />
       {/* Section E */}
-      <mesh
+      <BasicItem
         position={[width * -0.25, height * -5.0, 0]}
-        rotation={[-Math.PI / 2, Math.PI / 3, -Math.PI / 3]}
-      >
-        <tetrahedronGeometry></tetrahedronGeometry>
-        <meshStandardMaterial color="mediumpurple"></meshStandardMaterial>
-      </mesh>
+        rotation={[Math.PI / 3, Math.PI / 3, Math.PI / 3]}
+        color="mediumpurple"
+      />
       {/* End title */}
     </Scroll>
   );
