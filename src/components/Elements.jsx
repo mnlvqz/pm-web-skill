@@ -1,26 +1,30 @@
 import React from "react";
 import { Scroll } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
+
 import BasicItem from "./BasicItem.jsx";
+import ModelItem from "./ModelItem.jsx";
 
 const Elements = () => {
   const { width, height } = useThree((state) => state.viewport);
 
   return (
     <Scroll>
-      <spotLight
-        position={[10, 10, 10]}
-        angle={0.15}
-        penumbra={0.5}
-        decay={0}
-        intensity={Math.PI}
-      />
-      <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-      <ambientLight intensity={Math.PI / 2} />
       {/* Main title */}
+      {/* <BasicItem
+        position={[0, 0, 0]}
+        rotation={[Math.PI / 3, Math.PI / 3, Math.PI / 3]}
+        color="orange"
+      /> */}
+
+      <ModelItem
+        position={[width * -0.0, 0, 0]}
+        rotation={[Math.PI / 3, Math.PI / 3, Math.PI / 3]}
+      />
+
       {/* Section A */}
       <BasicItem
-        position={[width * -0.25, height * -1.0, 0]}
+        position={[width * -0.17, height * -0.83, 0]}
         rotation={[Math.PI / 3, Math.PI / 3, Math.PI / 3]}
         color="orange"
       />

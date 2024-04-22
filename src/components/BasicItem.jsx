@@ -34,7 +34,11 @@ const BasicItem = (props) => {
       onPointerOut={(event) => setHover(false)}
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={hovered ? "hotpink" : props.color} />
+      <meshStandardMaterial
+        color={hovered ? "hotpink" : props.color}
+        metalness={1}
+        roughness={0.1}
+      />
     </mesh>
   );
 };
