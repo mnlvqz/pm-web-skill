@@ -53,6 +53,32 @@ const Overlay = () => {
           </Heading>
         </Container>
         {/* Section A */}
+
+        {/* <Container
+          maxW="100%"
+          h="100vh"
+          //bg="pink"
+          style={{
+            position: "absolute",
+            top: `100vh`,
+            left: "0vw",
+          }}
+        >
+          <Grid
+            h="100%"
+            templateRows="repeat(6, 1fr)"
+            templateColumns="repeat(3, 1fr)"
+          >
+            <GridItem
+              colStart={1}
+              rowStart={6}
+              colSpan={6}
+              rowSpan={1}
+              padding="50px"
+              bg="orange"
+            ></GridItem>
+          </Grid>
+        </Container> */}
         <Container
           maxW="100%"
           h="100vh"
@@ -76,7 +102,19 @@ const Overlay = () => {
               bg="orange"
             >
               <Stack spacing={5}>
-                <Heading as="h1" fontSize="4xl">
+                <Heading
+                  as="h1"
+                  w="100%"
+                  textAlign="left"
+                  fontSize={{
+                    base: "5px",
+                    sm: "55px",
+                    md: "75px",
+                    lg: "85px",
+                    xl: "100px",
+                    "2xl": "72px",
+                  }}
+                >
                   ¿Qué es creative coding?
                 </Heading>
                 <Box>
@@ -94,6 +132,7 @@ const Overlay = () => {
             </GridItem>
           </Grid>
         </Container>
+
         {/* Section B */}
         <Container
           maxW="100%"
