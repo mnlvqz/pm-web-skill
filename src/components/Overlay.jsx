@@ -56,8 +56,8 @@ const Overlay = () => {
               ¿Qué es código creativo?
             </Heading>
             <Text fontSize={{ base: "sm", md: "md", lg: "lg" }}>
-              El código creativo es un proceso experimental que posibilita la
-              convergencia técnica de expresión a través de la programación por
+              El código creativo es un proceso experimental que establece la
+              convergencia de técnicas de expresión con la programación por
               computadora. La intersección de estos campos posibilita el
               desarrollo y la creación de propuestas desde enfoques que van de
               lo paramétrico, lo generativo y/o lo procedural, entre otros,
