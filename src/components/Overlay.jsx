@@ -1,332 +1,108 @@
-import React from "react";
-import { Scroll, ScrollControls } from "@react-three/drei";
 import {
-  Box,
-  Card,
-  CardBody,
-  CardHeader,
-  Center,
   ChakraProvider,
   Container,
-  Grid,
-  GridItem,
+  Flex,
   Heading,
-  Portal,
+  SimpleGrid,
   Stack,
   Text,
+  VStack,
+  extendTheme,
 } from "@chakra-ui/react";
+import React from "react";
+import "@fontsource/dm-mono";
+
+const theme = extendTheme({
+  fonts: {
+    heading: `'DM Mono', monospace`,
+    body: `'DM Mono', monospace`,
+  },
+  components: {
+    Heading: {
+      baseStyle: {
+        color: "purple.400",
+      },
+    },
+    Text: {
+      baseStyle: {
+        fontWeight: "light",
+        color: "purple.300",
+      },
+    },
+  },
+});
 
 const Overlay = () => {
   return (
-    <Scroll html style={{ width: "100%" }}>
-      <ChakraProvider>
-        {/* Main title */}
-        <Container
-          maxW="100%"
-          h="100vh"
-          style={{
-            position: "absolute",
-            top: `0vh`,
-            left: "0vw",
-          }}
-        >
-          <Heading
-            as="h1"
-            w="100%"
-            textAlign="center"
-            fontSize={{
-              base: "35px",
-              sm: "55px",
-              md: "75px",
-              lg: "85px",
-              xl: "100px",
-              "2xl": "120px",
-            }}
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate3d(-50%,-50%, 0)",
-            }}
-          >
-            Creative Coding
-          </Heading>
+    <ChakraProvider theme={theme}>
+      <VStack spacing={0}>
+        {/* Application */}
+        <Container maxW="100%" h="100vh">
+          <Flex height="100%" alignItems="center" justifyContent="center">
+            <Heading fontSize={{ base: "4xl", lg: "7xl" }}>
+              Código Creativo
+            </Heading>
+          </Flex>
         </Container>
-        {/* Section A */}
-
-        {/* <Container
-          maxW="100%"
-          h="100vh"
-          //bg="pink"
-          style={{
-            position: "absolute",
-            top: `100vh`,
-            left: "0vw",
-          }}
-        >
-          <Grid
-            h="100%"
-            templateRows="repeat(6, 1fr)"
-            templateColumns="repeat(3, 1fr)"
+        {/* Main Title */}
+        <Container maxW="100%" h="100vh">
+          <SimpleGrid
+            height="100%"
+            alignItems="center"
+            minChildWidth="300px"
+            padding={{ base: "5", lg: "20" }}
           >
-            <GridItem
-              colStart={1}
-              rowStart={6}
-              colSpan={6}
-              rowSpan={1}
-              padding="50px"
-              bg="orange"
-            ></GridItem>
-          </Grid>
-        </Container> */}
-        <Container
-          maxW="100%"
-          h="100vh"
-          style={{
-            position: "absolute",
-            top: `100vh`,
-            left: "0vw",
-          }}
-        >
-          <Grid
-            h="100%"
-            templateRows="repeat(7, 1fr)"
-            templateColumns="repeat(12, 1fr)"
-          >
-            <GridItem
-              colStart={8}
-              rowStart={3}
-              colSpan={4}
-              rowSpan={3}
-              padding="50px"
-              bg="orange"
-            >
-              <Stack spacing={5}>
-                <Heading
-                  as="h1"
-                  w="100%"
-                  textAlign="left"
-                  fontSize={{
-                    base: "5px",
-                    sm: "55px",
-                    md: "75px",
-                    lg: "85px",
-                    xl: "100px",
-                    "2xl": "72px",
-                  }}
-                >
-                  ¿Qué es creative coding?
-                </Heading>
-                <Box>
-                  <Text fontSize="lg" align="justify">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Porro aperiam doloribus ducimus laborum tempore ratione eum
-                    a obcaecati, similique debitis exercitationem incidunt
-                    facere tempora eligendi quasi perspiciatis vel illo
-                    consequuntur? Nemo voluptate explicabo aspernatur ullam,
-                    quos amet blanditiis consequuntur magni cumque, ipsa
-                    doloribus modi rerum.
-                  </Text>
-                </Box>
-              </Stack>
-            </GridItem>
-          </Grid>
+            <Heading fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}>
+              ¿Qué es código creativo?
+            </Heading>
+            <Text fontSize={{ base: "sm", md: "md", lg: "lg" }}>
+              El código creativo es un proceso experimental que posibilita la
+              convergencia técnica de expresión a través de la programación por
+              computadora. La intersección de estos campos posibilita el
+              desarrollo y la creación de propuestas desde enfoques que van de
+              lo paramétrico, lo generativo y/o lo procedural, entre otros,
+              permitiendo expandir los vínculos entre el arte, el diseño y la
+              tecnología. A diferencia de la programación tradicional el codigo
+              creativo no persigue la optimización o la funcionalidad de las
+              instrucciones codificadas. En cambio, su principal objetivo radica
+              en el proceso de exploración y su posible expresividad.
+            </Text>
+          </SimpleGrid>
         </Container>
-
-        {/* Section B */}
-        <Container
-          maxW="100%"
-          h="100vh"
-          style={{
-            position: "absolute",
-            top: `200vh`,
-            left: "0vw",
-          }}
-        >
-          <Grid
-            h="100%"
-            templateRows="repeat(7, 1fr)"
-            templateColumns="repeat(12, 1fr)"
-          >
-            <GridItem
-              colStart={2}
-              rowStart={3}
-              colSpan={4}
-              rowSpan={3}
-              padding="50px"
-              bg="salmon"
-            >
-              <Stack spacing={5}>
-                <Heading as="h1" fontSize="4xl">
-                  ¿Para qué sirve?
-                </Heading>
-                <Box>
-                  <Text fontSize="lg" align="justify">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Porro aperiam doloribus ducimus laborum tempore ratione eum
-                    a obcaecati, similique debitis exercitationem incidunt
-                    facere tempora eligendi quasi perspiciatis vel illo
-                    consequuntur? Nemo voluptate explicabo aspernatur ullam,
-                    quos amet blanditiis consequuntur magni cumque, ipsa
-                    doloribus modi rerum.
-                  </Text>
-                </Box>
-              </Stack>
-            </GridItem>
-          </Grid>
+        {/* Application */}
+        <Container maxW="100%" h="100vh" bg="orange">
+          TEST
         </Container>
-        {/* Section C */}
-        <Container
-          maxW="100%"
-          h="100vh"
-          style={{
-            position: "absolute",
-            top: `300vh`,
-            left: "0vw",
-          }}
-        >
-          <Grid
-            h="100%"
-            templateRows="repeat(7, 1fr)"
-            templateColumns="repeat(12, 1fr)"
-          >
-            <GridItem
-              colStart={8}
-              rowStart={3}
-              colSpan={4}
-              rowSpan={3}
-              padding="50px"
-              bg="skyblue"
-            >
-              <Stack spacing={5}>
-                <Heading as="h1" fontSize="4xl">
-                  ¿Quiénes lo emplean?
-                </Heading>
-                <Box>
-                  <Text fontSize="lg" align="justify">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Porro aperiam doloribus ducimus laborum tempore ratione eum
-                    a obcaecati, similique debitis exercitationem incidunt
-                    facere tempora eligendi quasi perspiciatis vel illo
-                    consequuntur? Nemo voluptate explicabo aspernatur ullam,
-                    quos amet blanditiis consequuntur magni cumque, ipsa
-                    doloribus modi rerum.
-                  </Text>
-                </Box>
-              </Stack>
-            </GridItem>
-          </Grid>
+        {/* Tools */}
+        <Container maxW="100%" h="100vh" bg="maroon">
+          TEST
         </Container>
-        {/* Section D */}
-        <Container
-          maxW="100%"
-          h="100vh"
-          style={{
-            position: "absolute",
-            top: `400vh`,
-            left: "0vw",
-          }}
-        >
-          <Grid
-            h="100%"
-            templateRows="repeat(7, 1fr)"
-            templateColumns="repeat(12, 1fr)"
-          >
-            <GridItem
-              colStart={2}
-              rowStart={3}
-              colSpan={4}
-              rowSpan={3}
-              padding="50px"
-              bg="aquamarine"
-            >
-              <Stack spacing={5}>
-                <Heading as="h1" fontSize="4xl" noOfLines={1}>
-                  ¿Cuáles son sus oportunidades?
-                </Heading>
-                <Box>
-                  <Text fontSize="lg" align="justify">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Porro aperiam doloribus ducimus laborum tempore ratione eum
-                    a obcaecati, similique debitis exercitationem incidunt
-                    facere tempora eligendi quasi perspiciatis vel illo
-                    consequuntur? Nemo voluptate explicabo aspernatur ullam,
-                    quos amet blanditiis consequuntur magni cumque, ipsa
-                    doloribus modi rerum.
-                  </Text>
-                </Box>
-              </Stack>
-            </GridItem>
-          </Grid>
+        {/* Examples */}
+        <Container maxW="100%" h="100vh" bg="purple">
+          TEST
         </Container>
-        {/* Section E */}
-        <Container
-          maxW="100%"
-          h="100vh"
-          style={{
-            position: "absolute",
-            top: `500vh`,
-            left: "0vw",
-          }}
-        >
-          <Grid
-            h="100%"
-            templateRows="repeat(7, 1fr)"
-            templateColumns="repeat(12, 1fr)"
-          >
-            <GridItem
-              colStart={8}
-              rowStart={3}
-              colSpan={4}
-              rowSpan={3}
-              padding="50px"
-              bg="mediumpurple"
-            >
-              <Stack spacing={5}>
-                <Heading as="h1" fontSize="4xl">
-                  ¿Cómo aprenderlo?
-                </Heading>
-                <Box>
-                  <Text fontSize="lg" align="justify">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Porro aperiam doloribus ducimus laborum tempore ratione eum
-                    a obcaecati, similique debitis exercitationem incidunt
-                    facere tempora eligendi quasi perspiciatis vel illo
-                    consequuntur? Nemo voluptate explicabo aspernatur ullam,
-                    quos amet blanditiis consequuntur magni cumque, ipsa
-                    doloribus modi rerum.
-                  </Text>
-                </Box>
-              </Stack>
-            </GridItem>
-          </Grid>
+        {/* Oportunities */}
+        <Container maxW="100%" h="100vh" bg="gray">
+          TEST
         </Container>
-        {/* End title */}
-        <Container
-          maxW="100%"
-          h="100vh"
-          //bg="orange"
-          style={{
-            position: "absolute",
-            top: `600vh`,
-            left: "0vw",
-          }}
-        >
-          <Heading
-            as="h1"
-            fontSize="8xl"
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate3d(-50%,-50%, 0)",
-            }}
-          >
-            Cierre
-          </Heading>
+        {/* Retribution */}
+        <Container maxW="100%" h="100vh" bg="green">
+          TEST
         </Container>
-      </ChakraProvider>
-    </Scroll>
+        {/* Education */}
+        <Container maxW="100%" h="100vh" bg="pink">
+          TEST
+        </Container>
+        {/* End */}
+        <Container maxW="100%" h="100vh" bg="brown">
+          TEST
+        </Container>
+        {/* Sources */}
+        <Container maxW="100%" h="100vh" bg="black">
+          TEST
+        </Container>
+      </VStack>
+    </ChakraProvider>
   );
 };
 
