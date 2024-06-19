@@ -13,16 +13,34 @@ const BasicItem = (props) => {
       (meshRef.current.scale = [width * 0.25, width * 0.25, width * 0.25])
   );
   */
+
+  const scale = props.scale * 0.0005;
   useFrame((state, delta) => {
     if (meshRef.current) {
       meshRef.current.rotation.y += delta;
+      meshRef.current.rotation.x += delta;
       meshRef.current.scale.set(
-        state.size.width * 0.001,
-        state.size.width * 0.001,
-        state.size.width * 0.001
+        state.size.width * scale,
+        state.size.width * scale,
+        state.size.width * scale
       );
     }
   });
+
+  let geometry;
+  switch (props.shape) {
+    case "box":
+      geometry = <boxGeometry args={[1, 1, 1]} />;
+      break;
+    case "torus":
+      geometry = <torusGeometry args={[0.5, 0.2, 16, 100]} />;
+      break;
+    case "sphere":
+      geometry = <sphereGeometry args={[0.5, 16, 16]} />;
+      break;
+    default:
+      geometry = <boxGeometry args={[1, 1, 1]} />;
+  }
 
   return (
     <mesh
@@ -33,12 +51,8 @@ const BasicItem = (props) => {
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
     >
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial
-        color={hovered ? "hotpink" : props.color}
-        metalness={1}
-        roughness={0.1}
-      />
+      {geometry}
+      <meshStandardMaterial color={hovered ? "orange" : props.color} />
     </mesh>
   );
 };
